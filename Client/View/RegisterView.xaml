@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Client.View.RegisterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.View" xmlns:viewmodel="clr-namespace:Client.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:RegisterViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="14" Text="Username" Grid.Row="0"/>
+        <TextBox Grid.Row="0" Margin="100 0 0 0" Width="150" HorizontalAlignment="Left" Text="{Binding Username}"/>
+        <TextBlock FontSize="14" Text="Password" Grid.Row="1"/>
+        <TextBox Grid.Row="1" Margin="100 0 0 0" Width="150" HorizontalAlignment="Left" Text="{Binding Password}"/>
+        <TextBlock FontSize="14" Text="House" Grid.Row="2"/>
+        <TextBox Grid.Row="2" Margin="100 0 0 0" Width="150" HorizontalAlignment="Left" Text="{Binding House}"/>
+        <TextBlock FontSize="14" Text="User Type" Grid.Row="3"/>
+        <ComboBox  Grid.Row="3" Margin="100 0 0 0" Width="150" HorizontalAlignment="Left" Text="{Binding UserType}">
+            <ComboBoxItem IsSelected="True">User</ComboBoxItem>
+            <ComboBoxItem>Admin</ComboBoxItem>
+        </ComboBox>
+        <TextBlock FontSize="14" Text="Salary" Grid.Row="4"/>
+        <TextBox Grid.Row="4" Margin="100 0 0 0" Width="150" HorizontalAlignment="Left" Text="{Binding Salary}"/>
+        <Button Content="Login" Command="{Binding LoginPageCommand}" CommandParameter="{Binding mvm}" Grid.Row="5" Width="150" HorizontalAlignment="left" Margin="200 0 0 0"/>
+        <Button Content="Register" Command="{Binding RegisterCommand}" CommandParameter="{Binding rvm}" Grid.Row="5" Width="150" HorizontalAlignment="left"/>
+    </Grid>
+</UserControl>
